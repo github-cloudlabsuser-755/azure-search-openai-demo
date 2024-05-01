@@ -1,28 +1,6 @@
----
-name: ChatGPT + Enterprise data
-description: Chat with your data using OpenAI and AI Search.
-languages:
-- python
-- typescript
-- bicep
-- azdeveloper
-products:
-- azure-openai
-- azure-cognitive-search
-- azure-app-service
-- azure
-page_type: sample
-urlFragment: azure-search-openai-demo
----
+# A4 Azure Hackathon - Team SusItOut - Port GuardAIn Demo Website
 
-# ChatGPT + Enterprise data with Azure OpenAI and AI Search
-## A4 Azure Hackathon - Team SusItOut - Port GuardAIn Demo Website
-> [!IMPORTANT]
-> As of November 15, 2023, Azure Cognitive Search has been renamed to Azure AI Search.
-
-### Announcing [**JavaScript**](https://aka.ms/azai/js/code), [**.NET**](https://aka.ms/azai/net/code), and [**Java**](https://aka.ms/azai/java/code) samples based on this one ([**Python**](https://aka.ms/azai/py/code)). Learn more at  https://aka.ms/azai.
-
-## Table of Contents
+## [To clean up before submission!] Table of Contents
 
 - [Features](#features)
 - [Azure account requirements](#azure-account-requirements)

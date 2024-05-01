@@ -6,7 +6,8 @@ from locust import HttpUser, between, task
 
 class ChatUser(HttpUser):
     wait_time = between(5, 20)
-
+    
+    # DAVIN TODO - update this section so its about container ports
     @task
     def ask_question(self):
         self.client.get("/")

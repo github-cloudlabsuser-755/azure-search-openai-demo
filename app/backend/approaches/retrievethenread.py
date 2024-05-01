@@ -17,13 +17,15 @@ class RetrieveThenReadApproach(Approach):
     """
 
     system_chat_template = (
-        "You are an intelligent assistant helping Contoso Inc employees with their healthcare plan questions and employee handbook questions. "
+        "You are an intelligent assistant helping Port Authority Staff with questions about the cargo in shipping containers, to find illegal goods and questions to help identify discrepancies between documents for the same shipment, that are stored in different data sources or in different formats. "
         + "Use 'you' to refer to the individual asking the questions even if they ask with 'I'. "
         + "Answer the following question using only the data provided in the sources below. "
         + "For tabular information return it as an html table. Do not return markdown format. "
         + "Each source has a name followed by colon and the actual information, always include the source name for each fact you use in the response. "
         + "If you cannot answer using the sources below, say you don't know. Use below example to answer"
     )
+
+    # DAVIN TODO - come up with some examples about what is higher risk? or about data discrepancies? to update sample conversations below
 
     # shots/sample conversation
     question = """
@@ -35,6 +37,7 @@ info2.pdf: Overlake is in-network for the employee plan.
 info3.pdf: Overlake is the name of the area that includes a park and ride near Bellevue.
 info4.pdf: In-network institutions include Overlake, Swedish and others in the region
 """
+
     answer = "In-network deductibles are $500 for employee and $1000 for family [info1.txt] and Overlake is in-network for the employee plan [info2.pdf][info4.pdf]."
 
     def __init__(

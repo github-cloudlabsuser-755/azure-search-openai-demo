@@ -19,15 +19,17 @@ class ChatApproach(Approach, ABC):
     SYSTEM = "system"
     USER = "user"
     ASSISTANT = "assistant"
-
+    
+    # DAVIN added examples here for cargo doc comparisons
     query_prompt_few_shots = [
-        {"role": USER, "content": "How did crypto do last year?"},
-        {"role": ASSISTANT, "content": "Summarize Cryptocurrency Market Dynamics from last year"},
-        {"role": USER, "content": "What are my health plans?"},
-        {"role": ASSISTANT, "content": "Show available health plans"},
+        {"role": USER, "content": "Are there any discrepancies between the below details from 2 documents -   \n\nBILL OF LADING -    \n\n2. 15 Wooden Crates of Auto Parts   \n\n- Quantity: 300   \n- Weight: 2500 kg   \n- Measurement: 10 cubic meters   \n\n  \n\nINVOICE -    \n\n2. 15 Wooden Crates of Automotive Parts   \n\n   - Quantity: 150   \n   - Unit Price: $25.00   \n   - Total: $3,750.00 "},
+        {"role": ASSISTANT, "content": "Here are the discrepancies between the Bill of Lading and the Invoice. \n\nSource\tBill of Lading\tInvoice \n\nDescription\t15 Wooden Crates of Auto Parts\t15 Wooden Crates of Automotive Parts \nQuantity\t300\t150 \nWeight\t2500 kg\t- \nMeasurement\t10 cubic meters\t- \nUnit Price\t-\t$25.00 \nTotal\t-\t$3,750.00 \n\n\nThe quantity of the goods is different. The Bill of Lading lists a quantity of 300, while the Invoice lists a quantity of 150. \n\nThe Invoice provides a Unit Price and Total value, while the Bill of Lading provides Weight and Measurement information."},
+        {"role": USER, "content": "Are there any discrepancies between the below details from 3  different documents -  \n\nINVOICE -   \nDescription of Goods:  \n1. 40 Cartons of Home Appliances  \n   - Quantity: 400  \n   - Total: $4,800.00  \n\nCONSIGNMENT -\n1. Home Appliances  x 80 cartons\n   - Quantity: 100  \n   - Total: $2000.00  \n\nBILL OF LADING -  \nDescription of Goods:  \n1. 40 Cartons of Household Appliances  \n - Quantity: 200  \n - Value: $4,800.00"},
+        {"role": ASSISTANT, "content": "Yes, there are discrepancies between the Invoice, Consignment, and the Bill of Lading. Here are the differences:\n\n| Source Document | Description | Quantity | Total |\n|-----------------|-------------|----------|-------|\n| Invoice | 40 Cartons of Home Appliances | 400 | $4,800.00 |\n| Consignment | Home Appliances x 80 cartons | 100 | $2,000.00 |\n| Bill of Lading | 40 Cartons of Household Appliances | 200 | $4,800.00 |\n\nDiscrepancies:\n\n1. Description: The descriptions of goods are different in all three documents.\n2. Quantity: The quantity of goods is different in all three documents. This discrepancy is highlighted in red.\n3. Total: The total value of goods is different in the Consignment compared to the Invoice and the Bill of Lading."},
     ]
     NO_RESPONSE = "0"
 
+    # DAVIN TODO update this with more suitable info for cargo shipping and better prompts 
     follow_up_questions_prompt_content = """Generate 3 very brief follow-up questions that the user would likely ask next.
     Enclose the follow-up questions in double angle brackets. Example:
     <<Are there exclusions for prescriptions?>>
